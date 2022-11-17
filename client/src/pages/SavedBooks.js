@@ -12,31 +12,6 @@ import { REMOVE_BOOK } from '../utils/mutations';
 
 
 const SavedBooks = () => {
-  
-  // // get queryparam
-  // const { username: userParam } = useParams();
-  
-  // let username = {};
-  // const getUserData = async () => {
-  //   try {
-  //     const token = await Auth.loggedIn() ? Auth.getToken() : null;
-      
-  //     if (!token) {
-  //       return false;
-  //     }
-
-  //     username = await Auth.getProfile(token)
-      
-      
-  //     return username;
-  //   } catch (err) {
-  //     console.error(err);
-
-  //   }
-  // }
-
-  // // const username = getUserData();
-  // console.log("username", username);
 
   // gql query hook
   const { loading, data } = useQuery( GET_ME );
@@ -46,7 +21,7 @@ const SavedBooks = () => {
   const userData = data?.me || {};
   console.log(userData);
 
-  const userDataLength = Object.keys(userData).length;
+ // const userDataLength = Object.keys(userData).length;
 
 
   if (loading) {
@@ -81,11 +56,6 @@ const SavedBooks = () => {
       console.error(err);
     }
   };
-
-  // // if data isn't here yet, say so
-  // if (!userDataLength) {
-  //   return <h2>LOADING...</h2>;
-  // }
 
   return (
     <>
